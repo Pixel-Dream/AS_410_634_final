@@ -10,14 +10,14 @@ print("This program will find ORFs for sequences.\n When prompted, please enter 
 
 file_path = input("Enter a FASTA file: ")
 
-min_bp = input("Enter minimum length in bp for ORFs: ")
+min_bp = int(input("Enter minimum length in bp for ORFs: "))
 
 seq = read_fasta(file_path)
 # Test
-import sys
-sys.path.append('D:/share/divergene/script/final')
-seq = read_fasta("D:/share/divergene/script/final/sequence.fasta")
-min_bp = 300
+#import sys
+#sys.path.append('D:/share/divergene/script/final')
+#seq = read_fasta("D:/share/divergene/script/final/sequence.fasta")
+#min_bp = 300
 
 rf = {}
 ORF_dict = {}
