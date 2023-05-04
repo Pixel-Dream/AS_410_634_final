@@ -1,4 +1,11 @@
 def readingFrames(sequence):
+    """
+    Creates the 6 different reading frames of our data
+    within each reading frame is a list of the triplet codons required
+    :param sequence:
+    :return:
+    """
+
     RF1 = []
     RF2 = []
     RF3 = []
