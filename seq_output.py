@@ -8,6 +8,7 @@ def maxLenIndex(ls):
 
 
 def outputORF(ORFpairs, ORFs, max_codon=15, seq_name="Untitled", max_only=True):
+    rtn_text = ""
     for i in range(len(ORFs)):
         if len(ORFs[i]) > 0:
             output_index = maxLenIndex(ORFs[i])
@@ -42,5 +43,6 @@ def outputORF(ORFpairs, ORFs, max_codon=15, seq_name="Untitled", max_only=True):
                     if counter >= max_codon:
                         output_text += "\n"
                         counter = 0
-
+                rtn_text += output_text + "\n"
                 print(output_text)
+    return(rtn_text)

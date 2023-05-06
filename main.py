@@ -14,10 +14,10 @@ min_bp = input("Enter minimum length in bp for ORFs: ")
 
 seq = read_fasta(file_path)
 # Test
-import sys
-sys.path.append('D:/share/divergene/script/final')
-seq = read_fasta("D:/share/divergene/script/final/sequence.fasta")
-min_bp = 300
+#import sys
+#sys.path.append('D:/share/divergene/script/final')
+#seq = read_fasta("D:/share/divergene/script/final/sequence.fasta")
+#min_bp = 300
 
 rf = {}
 ORF_dict = {}
@@ -25,11 +25,14 @@ ORF_pair_dict = {}
 ORF_seq_dict = {}
 min_aa = round(min_bp/3)
 
+str = ""
 
 for i in seq.keys():
     rf[i] = readingFrames(seq[i])
     ORF_dict[i] = ORFData(rf[i])
     ORF_pair_dict[i] = printORFs(ORF_dict[i][0],ORF_dict[i][1],min_aa)
     ORF_seq_dict[i] = sequenceORFs(ORF_pair_dict[i],rf[i])
-    outputORF(ORF_pair_dict[i],ORF_seq_dict[i],max_codon=15,seq_name=i,max_only=True)
+    str += outputORF(ORF_pair_dict[i],ORF_seq_dict[i],max_codon=15,seq_name=i,max_only=True)
 
+with open('output.txt', 'w') as f:
+    f.write(str)
