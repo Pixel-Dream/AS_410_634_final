@@ -10,7 +10,7 @@ print("This program will find ORFs for sequences.\n When prompted, please enter 
 
 file_path = input("Enter a FASTA file: ")
 
-min_bp = input("Enter minimum length in bp for ORFs: ")
+min_bp = int(input("Enter minimum length in bp for ORFs: "))
 
 seq = read_fasta(file_path)
 # Test

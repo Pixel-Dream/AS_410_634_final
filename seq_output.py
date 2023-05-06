@@ -4,6 +4,7 @@ def maxLenIndex(ls):
     for i in range(len(ls)):
         if len(ls[i]) > max_len:
             ind = i
+            max_len = len(ls[i])
     return ind
 
 
