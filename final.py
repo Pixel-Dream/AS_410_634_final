@@ -3,10 +3,7 @@ import sys
 # Input
 
 def read_fasta(file_path):
-	"""
-	Created by Yongqi Lin
-	""" 
-	
+	#Created by Yongqi Lin    
     with open(file_path, 'r') as file:
         # The map for all sequences
         sequences = {}
@@ -160,12 +157,12 @@ def printORFs(startData, stopData, min_aa=100):
 
 
 def sequenceORFs(ORFpairs, readingframes):
-	"""
-    Takes the tuple of the valid ORF's for each RF and then takes the original reading frame's and slices the list based
-    on the locations of the tuples to get the proper ORF's
 
-    Created by Ashwin Mukund
-    """
+    #Takes the tuple of the valid ORF's for each RF and then takes the original reading 
+    #frame's and slices the list based on the locations of the tuples to get the proper ORF's
+
+    #Created by Ashwin Mukund
+
     ORFs = []
     for j in range(len(ORFpairs)):
         ORFs.append([])
@@ -178,10 +175,10 @@ def sequenceORFs(ORFpairs, readingframes):
 # Output
 
 def maxLenIndex(ls):
-	"""
-	Created by Haowen Zhou
-	This function will return the index of the longest element in the input list
-	"""
+
+	#Created by Haowen Zhou
+	#This function will return the index of the longest element in the input list
+
     ind = 0
     max_len = 0
     for i in range(len(ls)):
@@ -192,11 +189,9 @@ def maxLenIndex(ls):
 
 
 def outputORF(ORFpairs, ORFs, max_codon=15, seq_name="Untitled", max_only=True):
-	"""
-	Created by Haowen Zhou
-	This function will print the result in the dedicated format and return the string
-	"""
-	# Created by Haowen Zhou
+	#Created by Haowen Zhou
+	#This function will print the result in the dedicated format and return the string
+
     rtn_text = ""
     for i in range(len(ORFs)):
         if len(ORFs[i]) > 0:
