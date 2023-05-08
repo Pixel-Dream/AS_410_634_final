@@ -3,6 +3,10 @@ import sys
 # Input
 
 def read_fasta(file_path):
+	"""
+	Created by Yongqi Lin
+	""" 
+	
     with open(file_path, 'r') as file:
         # The map for all sequences
         sequences = {}
@@ -39,7 +43,8 @@ def readingFrames(sequence):
     Creates the 6 different reading frames of our data
     within each reading frame is a list of the triplet codons required
     :param sequence:
-    :return: 123
+    :return: the 6 reading frames in the form of codons
+    Created by Ashwin Mukund
     """
 
     RF1 = []
@@ -155,7 +160,7 @@ def printORFs(startData, stopData, min_aa=100):
 
 
 def sequenceORFs(ORFpairs, readingframes):
-    """
+	"""
     Takes the tuple of the valid ORF's for each RF and then takes the original reading frame's and slices the list based
     on the locations of the tuples to get the proper ORF's
 
@@ -173,6 +178,10 @@ def sequenceORFs(ORFpairs, readingframes):
 # Output
 
 def maxLenIndex(ls):
+	"""
+	Created by Haowen Zhou
+	This function will return the index of the longest element in the input list
+	"""
     ind = 0
     max_len = 0
     for i in range(len(ls)):
@@ -183,6 +192,11 @@ def maxLenIndex(ls):
 
 
 def outputORF(ORFpairs, ORFs, max_codon=15, seq_name="Untitled", max_only=True):
+	"""
+	Created by Haowen Zhou
+	This function will print the result in the dedicated format and return the string
+	"""
+	# Created by Haowen Zhou
     rtn_text = ""
     for i in range(len(ORFs)):
         if len(ORFs[i]) > 0:
