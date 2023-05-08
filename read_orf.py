@@ -3,7 +3,8 @@ def readingFrames(sequence):
     Creates the 6 different reading frames of our data
     within each reading frame is a list of the triplet codons required
     :param sequence:
-    :return: 123
+    :return: the 6 reading frames in the form of codons
+    Created by Ashwin Mukund
     """
 
     RF1 = []
@@ -49,6 +50,11 @@ def readingFrames(sequence):
 
 
 def ORFData(readingframes):
+    """
+    Gets every occurence of the start and stop codon in the file and places it into two different lists for 6 of the
+    reading frames
+    Created by Ashwin Mukund
+    """
     startcodonReadingFrames = []
     stopcodonReadingFrames = []
     for j in range(6):
@@ -89,6 +95,15 @@ def ORFData(readingframes):
 
 
 def printORFs(startData, stopData, min_aa=100):
+    """
+    Compares every start codon to the first instance of the stop codon. This is an inefficient function, since it has an
+    unecessary for loop for the stop codon list
+    An ORF is only valid for every instance start codon with the first instnace of the stop codon, since that is how
+    RNA Polymerase works
+    Regardless, the function examines and appends every valid ORF's locations to a tuple
+
+    Created by Ashwin Mukund and Haowen Zhou
+    """
     readingFrameORFs = []
     for j in range(len(startData)):
         readingFrameORFs.append([])
@@ -105,6 +120,12 @@ def printORFs(startData, stopData, min_aa=100):
 
 
 def sequenceORFs(ORFpairs, readingframes):
+    """
+    Takes the tuple of the valid ORF's for each RF and then takes the original reading frame's and slices the list based
+    on the locations of the tuples to get the proper ORF's
+
+    Created by Ashwin Mukund
+    """
     ORFs = []
     for j in range(len(ORFpairs)):
         ORFs.append([])
